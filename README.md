@@ -4,7 +4,7 @@
 
 An Advanced Real-Data Program Management Control Tower.
 It Uses Public GitHub Project Signals To Predict Work-Item Risk, Summarize Program Health, Surface Dependency Blockers, And Create Executive-Ready Status Evidence.
-The Project Combines A Working ML Pipeline, Power BI-Ready Outputs, And A Visually Distinct Browser Dashboard For Recruiter Review.
+The Project Combines A Working ML Pipeline, Power BI-Ready Outputs, And A Visually Distinct Browser Dashboard For Technical Review.
 
 This Project Turns Public GitHub Issues And Pull Requests Into A Portfolio-Level PMO Dashboard With Predictive Delay Risk, Program Health Scoring, Dependency Signals, Executive Status Briefs, And Power BI-Ready Outputs.
 
@@ -99,13 +99,3 @@ Then Open:
 http://127.0.0.1:8770/web/index.html
 ```
 
-## Portfolio Story
-
-**AI PMO & Program Control Tower** - A Real-Data AI Program Management Dashboard That Uses Public GitHub Work Items To Predict Delivery Risk, Score Program Health, Surface Dependency Signals, And Generate Executive Status Briefs.
-
-Recommended Resume Bullets:
-
-- Built A Real-Data AI PMO Control Tower Using Public GitHub Issues And Pull Requests Across Five Large Open-Source Program Streams.
-- Trained A Delay-Risk Classification Model To Score Work Items And Identify High-Risk Delivery Items.
-- Designed Program Health Scoring, Dependency Detection, Executive Status Briefs, And A Ranked PMO Action Queue.
-- Created A Visually Advanced Browser Dashboard And Power BI-Ready Data Products For Portfolio-Level Delivery Governance.
