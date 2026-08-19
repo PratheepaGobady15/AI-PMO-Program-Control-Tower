@@ -1,6 +1,10 @@
 # AI PMO & Program Control Tower
 
+**Live Dashboard:** [Open AI PMO & Program Control Tower](https://pratheepagobady15.github.io/AI-PMO-Program-Control-Tower/)
+
 An Advanced Real-Data Program Management Control Tower Built For Pratheepa Gobady.
+It Uses Public GitHub Project Signals To Predict Work-Item Risk, Summarize Program Health, Surface Dependency Blockers, And Create Executive-Ready Status Evidence.
+The Project Combines A Working ML Pipeline, Power BI-Ready Outputs, And A Visually Distinct Browser Dashboard For Recruiter Review.
 
 This Project Turns Public GitHub Issues And Pull Requests Into A Portfolio-Level PMO Dashboard With Predictive Delay Risk, Program Health Scoring, Dependency Signals, Executive Status Briefs, And Power BI-Ready Outputs.
 
@@ -71,7 +75,13 @@ The Validation Script Checks Required Outputs, Real GitHub Source Signals, Model
 
 ## Open The Dashboard
 
-Open This File In A Browser:
+Open The Live Dashboard:
+
+```text
+https://pratheepagobady15.github.io/AI-PMO-Program-Control-Tower/
+```
+
+Or Open This File Locally In A Browser:
 
 ```text
 web/index.html
