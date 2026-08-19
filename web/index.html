@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI PMO & Program Control Tower</title>
+    <meta
+      name="description"
+      content="Real-Data AI PMO Control Tower For Program Health, Delivery Risk, Dependency Signals, And Executive Status Briefs."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="control-shell">
+      <aside class="rail" aria-label="Portfolio Identity">
+        <div class="rail-mark">PMO</div>
+        <div>
+          <span>Owner</span>
+          <strong>Pratheepa Gobady</strong>
+        </div>
+        <div>
+          <span>Data Source</span>
+          <strong>GitHub Work Items</strong>
+        </div>
+        <div>
+          <span>Mode</span>
+          <strong>Predictive Control</strong>
+        </div>
+      </aside>
+
+      <section class="workspace">
+        <header class="hero">
+          <canvas id="portfolioCanvas" width="1180" height="360" aria-label="Portfolio Dependency Constellation"></canvas>
+          <div class="hero-copy">
+            <p class="eyebrow">Real-Data Program Intelligence</p>
+            <h1>AI PMO & Program Control Tower</h1>
+            <p>
+              A Portfolio-Level Delivery Cockpit That Scores Program Health, Predicts Delay Risk,
+              Surfaces Dependencies, And Generates Evidence-Backed Executive Status Briefs.
+            </p>
+          </div>
+          <div class="hero-board" aria-label="Control Tower Signals">
+            <div>
+              <span>Model</span>
+              <strong>Delay Risk</strong>
+            </div>
+            <div>
+              <span>Scope</span>
+              <strong>Issues + PRs</strong>
+            </div>
+            <div>
+              <span>View</span>
+              <strong>Portfolio PMO</strong>
+            </div>
+            <div>
+              <span>Output</span>
+              <strong>Actions + Briefs</strong>
+            </div>
+          </div>
+        </header>
+
+        <section class="kpi-strip" aria-label="Executive KPIs">
+          <article>
+            <span>Programs</span>
+            <strong id="kpiPrograms">0</strong>
+            <small>Portfolio Streams</small>
+          </article>
+          <article>
+            <span>Work Items</span>
+            <strong id="kpiItems">0</strong>
+            <small>Real GitHub Items</small>
+          </article>
+          <article>
+            <span>High Risk</span>
+            <strong id="kpiHighRisk">0</strong>
+            <small>Model-Scored Items</small>
+          </article>
+          <article>
+            <span>ROC AUC</span>
+            <strong id="kpiAuc">0.00</strong>
+            <small>Holdout Validation</small>
+          </article>
+        </section>
+
+        <section class="control-strip" aria-label="Portfolio Controls">
+          <div>
+            <span>Status Lens</span>
+            <div class="button-row" id="statusFilters">
+              <button class="active" data-status="All" type="button">All</button>
+              <button data-status="Red" type="button">Red</button>
+              <button data-status="Amber" type="button">Amber</button>
+              <button data-status="Green" type="button">Green</button>
+            </div>
+          </div>
+          <label>
+            <span>Action Search</span>
+            <input id="actionSearch" type="search" placeholder="Search Program, Repo, Risk, Dependency..." />
+          </label>
+        </section>
+
+        <section class="grid-main">
+          <article class="panel panel-wide">
+            <div class="panel-heading">
+              <div>
+                <span>Program Health</span>
+                <h2>Portfolio Delivery Runway</h2>
+              </div>
+              <strong id="atRiskPrograms">0 At Risk</strong>
+            </div>
+            <div class="program-list" id="programList"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <span>Risk Matrix</span>
+                <h2>Health Vs Delay Exposure</h2>
+              </div>
+            </div>
+            <canvas id="riskCanvas" width="640" height="420" aria-label="Program Risk Matrix"></canvas>
+          </article>
+
+          <article class="panel panel-tall">
+            <div class="panel-heading">
+              <div>
+                <span>PMO Action Queue</span>
+                <h2>AI-Prioritized Decisions</h2>
+              </div>
+              <div class="button-row compact" id="laneFilters" aria-label="Action Lane Filters">
+                <button class="active" data-lane="All" type="button">All</button>
+                <button data-lane="Dependency / Blocker" type="button">Blockers</button>
+                <button data-lane="Delivery Review" type="button">Reviews</button>
+                <button data-lane="Quality Risk" type="button">Quality</button>
+              </div>
+            </div>
+            <div class="action-list" id="actionList"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <span>Flow Signal</span>
+                <h2>Created Vs Closed Timeline</h2>
+              </div>
+            </div>
+            <canvas id="flowCanvas" width="640" height="360" aria-label="Portfolio Flow Timeline"></canvas>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <span>Dependencies</span>
+                <h2>Blocker Radar</h2>
+              </div>
+            </div>
+            <div class="dependency-list" id="dependencyList"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <span>Executive Briefs</span>
+                <h2>Evidence-Backed Status</h2>
+              </div>
+            </div>
+            <div class="brief-list" id="briefList"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <span>Model Assurance</span>
+                <h2>Scores + Drivers</h2>
+              </div>
+            </div>
+            <div class="model-grid">
+              <div id="metricList"></div>
+              <div id="importanceList"></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="data-products">
+          <div>
+            <p class="eyebrow">Power BI And Portfolio Ready</p>
+            <h2>Clean PMO Data Products</h2>
+          </div>
+          <div class="download-grid">
+            <a href="../outputs/work_item_risk_predictions.csv" download>Work Item Risks</a>
+            <a href="../outputs/program_health_summary.csv" download>Program Health</a>
+            <a href="../outputs/risk_action_queue.csv" download>Action Queue</a>
+            <a href="../outputs/dependency_blocker_view.csv" download>Dependency View</a>
+            <a href="../outputs/executive_status_briefs.csv" download>Status Briefs</a>
+            <a href="../outputs/model_metrics.csv" download>Model Metrics</a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="data/dashboard_data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

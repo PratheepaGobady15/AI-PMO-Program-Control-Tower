@@ -1,0 +1,7 @@
+month,program,created_items,created_high_risk,closed_items,throughput_gap
+2026-07-01,Cloud Native Platform Reliability,34,18,9,25
+2026-08-01,Cloud Native Platform Reliability,366,62,76,290
+2026-08-01,Data Platform Orchestration,400,0,197,203
+2026-08-01,Developer Experience Modernization,400,0,192,208
+2026-08-01,Language Ecosystem Delivery,400,0,203,197
+2026-08-01,Runtime Platform Stabilization,400,7,208,192

@@ -1,0 +1,6 @@
+program,portfolio_domain,source_repo,total_work_items,open_work_items,pull_requests,issues,avg_delay_risk_score,high_risk_items,blocker_signals,stale_or_delayed_rate,avg_time_since_update_days,repo_stars,avg_cycle_time_closed,median_cycle_time_closed,open_rate,program_health_score,program_status
+Cloud Native Platform Reliability,Cloud Platform,kubernetes/kubernetes,400,315,282,118,20.71,80,367,0.21,7.43,124580,1.75,0.21,0.7875,53.1,Red
+Runtime Platform Stabilization,Runtime Engineering,nodejs/node,400,192,332,68,1.8,7,221,0.025,5.35,119012,3.14,2.02,0.48,68.8,Amber
+Data Platform Orchestration,Data Engineering,apache/airflow,400,203,363,37,0.0,0,14,0.0,3.06,46523,1.04,0.59,0.5075,69.3,Amber
+Language Ecosystem Delivery,Language Platform,rust-lang/rust,400,197,325,75,0.0,0,297,0.0,2.3,115595,0.93,0.61,0.4925,69.8,Amber
+Developer Experience Modernization,Developer Tools,microsoft/vscode,400,208,171,229,0.0,0,0,0.0,0.62,188912,0.26,0.11,0.52,87.4,Green

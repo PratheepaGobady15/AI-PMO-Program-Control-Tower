@@ -1,0 +1,9 @@
+model,metric,value
+GitHub Program Delay Risk,ROC AUC,0.9527
+GitHub Program Delay Risk,Average Precision,0.4609
+GitHub Program Delay Risk,F1,0.5
+GitHub Program Delay Risk,Risk Threshold,0.15
+GitHub Program Delay Risk,Accuracy,0.9458
+GitHub Program Delay Risk,Training Rows,1520.0
+GitHub Program Delay Risk,Validation Rows,480.0
+GitHub Program Delay Risk,Observed Delay Rate,0.047
