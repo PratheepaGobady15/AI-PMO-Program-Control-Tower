@@ -2,7 +2,7 @@
 
 **Live Dashboard:** [Open AI PMO & Program Control Tower](https://pratheepagobady15.github.io/AI-PMO-Program-Control-Tower/)
 
-An Advanced Real-Data Program Management Control Tower Built For Pratheepa Gobady.
+An Advanced Real-Data Program Management Control Tower.
 It Uses Public GitHub Project Signals To Predict Work-Item Risk, Summarize Program Health, Surface Dependency Blockers, And Create Executive-Ready Status Evidence.
 The Project Combines A Working ML Pipeline, Power BI-Ready Outputs, And A Visually Distinct Browser Dashboard For Recruiter Review.
 
