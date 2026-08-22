@@ -1,9 +1,9 @@
 {
   "generatedAt": "2026-08-19T00:42:40+00:00",
-  "generatedFor": "Pratheepa Gobady",
+  "generatedFor": "Project Demo",
   "title": "AI PMO & Program Control Tower",
   "kpis": {
-    "project_owner": "Pratheepa Gobady",
+    "project_owner": "Project Demo",
     "data_source": "GitHub REST API Public Issues And Pull Requests",
     "programs_analyzed": 5,
     "repositories_analyzed": 5,
@@ -135,7 +135,7 @@
       "comment_count": 2,
       "labels": "sig/windows | kind/failing-test | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/issues/141085",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -152,7 +152,7 @@
       "comment_count": 3,
       "labels": "sig/architecture | area/code-organization | needs-triage | kind/dependency",
       "item_url": "https://github.com/kubernetes/kubernetes/issues/141144",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -169,7 +169,7 @@
       "comment_count": 4,
       "labels": "kind/bug | sig/api-machinery | size/S | release-note-none | approved | cncf-cla: yes | area/code-generation | needs-priority | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141149",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -186,7 +186,7 @@
       "comment_count": 5,
       "labels": "kind/bug | area/kubectl | release-note | size/M | sig/cli | cncf-cla: yes | needs-ok-to-test | needs-priority | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141090",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Program Watchlist",
@@ -203,7 +203,7 @@
       "comment_count": 1,
       "labels": "sig/network | kind/flake | triage/unresolved",
       "item_url": "https://github.com/kubernetes/kubernetes/issues/141136",
-      "recommended_action": "Move To PMO Watchlist, Validate Scope, Owner, And Next Decision Date."
+      "recommended_action": "Move to the PMO watchlist, validate scope, and set the next decision date."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -220,7 +220,7 @@
       "comment_count": 6,
       "labels": "kind/bug | lgtm | sig/node | release-note | size/M | approved | cncf-cla: yes | ok-to-test | needs-priority | needs-triage | wg/device-management",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141105",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -237,7 +237,7 @@
       "comment_count": 1,
       "labels": "c++ | lib / src | needs-ci",
       "item_url": "https://github.com/nodejs/node/pull/65022",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -254,7 +254,7 @@
       "comment_count": 5,
       "labels": "kind/bug | sig/scheduling | size/L | release-note-none | cncf-cla: yes | needs-priority | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141078",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -271,7 +271,7 @@
       "comment_count": 2,
       "labels": "kind/bug | sig/apps | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/issues/141095",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -288,7 +288,7 @@
       "comment_count": 4,
       "labels": "area/test | kind/cleanup | sig/storage | size/S | release-note-none | cncf-cla: yes | sig/testing | needs-ok-to-test | needs-priority | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141101",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Delivery Review",
@@ -322,7 +322,7 @@
       "comment_count": 6,
       "labels": "kind/bug | lgtm | sig/node | release-note | size/M | cncf-cla: yes | ok-to-test | needs-priority | needs-triage | wg/device-management",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141106",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -339,7 +339,7 @@
       "comment_count": 6,
       "labels": "area/kubelet | kind/cleanup | sig/node | size/L | release-note-none | cncf-cla: yes | needs-ok-to-test | needs-priority | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141114",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -356,7 +356,7 @@
       "comment_count": 2,
       "labels": "needs-ci",
       "item_url": "https://github.com/nodejs/node/pull/65017",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -373,7 +373,7 @@
       "comment_count": 2,
       "labels": "c++ | semver-major | http_parser | needs-ci",
       "item_url": "https://github.com/nodejs/node/pull/65010",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -390,7 +390,7 @@
       "comment_count": 12,
       "labels": "kind/bug | lgtm | sig/api-machinery | size/S | release-note-none | approved | cncf-cla: yes | ok-to-test | needs-priority | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141098",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Delivery Review",
@@ -441,7 +441,7 @@
       "comment_count": 5,
       "labels": "kind/bug | sig/node | release-note | size/M | cncf-cla: yes | needs-ok-to-test | needs-priority | needs-triage | wg/device-management",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141108",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -458,7 +458,7 @@
       "comment_count": 3,
       "labels": "needs-ci | test_runner",
       "item_url": "https://github.com/nodejs/node/pull/65008",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -475,7 +475,7 @@
       "comment_count": 2,
       "labels": "kind/bug | sig/scheduling | needs-triage | wg/device-management",
       "item_url": "https://github.com/kubernetes/kubernetes/issues/141103",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -492,7 +492,7 @@
       "comment_count": 1,
       "labels": "cluster | needs-ci",
       "item_url": "https://github.com/nodejs/node/pull/65020",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -509,7 +509,7 @@
       "comment_count": 4,
       "labels": "area/test | kind/cleanup | lgtm | sig/api-machinery | size/M | release-note-none | sig/apps | approved | cncf-cla: yes | sig/testing | needs-priority | triage/accepted",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141168",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Program Watchlist",
@@ -526,7 +526,7 @@
       "comment_count": 8,
       "labels": "doc",
       "item_url": "https://github.com/nodejs/node/issues/65018",
-      "recommended_action": "Move To PMO Watchlist, Validate Scope, Owner, And Next Decision Date."
+      "recommended_action": "Move to the PMO watchlist, validate scope, and set the next decision date."
     },
     {
       "decision_lane": "Delivery Review",
@@ -560,7 +560,7 @@
       "comment_count": 4,
       "labels": "kind/bug | area/kubectl | release-note | size/S | sig/cli | cncf-cla: yes | needs-ok-to-test | needs-priority | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141099",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -577,7 +577,7 @@
       "comment_count": 2,
       "labels": "kind/cleanup | sig/testing | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/issues/141121",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Quality Risk",
@@ -594,7 +594,7 @@
       "comment_count": 19,
       "labels": "kind/bug | kind/cleanup | sig/api-machinery | triage/accepted",
       "item_url": "https://github.com/kubernetes/kubernetes/issues/141166",
-      "recommended_action": "Move To PMO Watchlist, Validate Scope, Owner, And Next Decision Date."
+      "recommended_action": "Move to the PMO watchlist, validate scope, and set the next decision date."
     },
     {
       "decision_lane": "Program Watchlist",
@@ -611,7 +611,7 @@
       "comment_count": 2,
       "labels": "sig/network | kind/flake | triage/unresolved",
       "item_url": "https://github.com/kubernetes/kubernetes/issues/141133",
-      "recommended_action": "Move To PMO Watchlist, Validate Scope, Owner, And Next Decision Date."
+      "recommended_action": "Move to the PMO watchlist, validate scope, and set the next decision date."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -628,7 +628,7 @@
       "comment_count": 12,
       "labels": "kind/bug | area/test | sig/api-machinery | size/L | kind/api-change | release-note-none | cncf-cla: yes | sig/testing | area/code-generation | ok-to-test | needs-priority | api-review | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141086",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -645,7 +645,7 @@
       "comment_count": 5,
       "labels": "kind/bug | sig/storage | needs-triage",
       "item_url": "https://github.com/kubernetes/kubernetes/issues/141151",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     },
     {
       "decision_lane": "Dependency / Blocker",
@@ -662,7 +662,7 @@
       "comment_count": 3,
       "labels": "kind/cleanup | sig/scheduling | area/apiserver | sig/storage | sig/api-machinery | size/M | release-note-none | sig/auth | sig/apps | cncf-cla: yes | needs-priority | triage/accepted | wg/device-management",
       "item_url": "https://github.com/kubernetes/kubernetes/pull/141148",
-      "recommended_action": "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+      "recommended_action": "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     }
   ],
   "dependencyView": [
@@ -1087,7 +1087,7 @@
       "program_status": "Red",
       "status_brief": "Cloud Native Platform Reliability Is Red With A Health Score Of 53.1. The Highest PMO Signal Is Dependency / Blocker, With 80 High-Risk Work Items And 367 Dependency Or Blocker Signals.",
       "evidence": "400 Items Scored; 315 Open; 20.7 Average Risk; 21.0% Delayed Or Stale.",
-      "recommended_focus": "Run A PMO Recovery Review, Confirm Owners, And Protect Near-Term Milestones."
+      "recommended_focus": "Run a PMO recovery review, assign accountable leads, and protect near-term milestones."
     },
     {
       "program": "Runtime Platform Stabilization",

@@ -1,2 +1,2 @@
 project_owner,data_source,programs_analyzed,repositories_analyzed,work_items_scored,open_work_items,high_risk_work_items,avg_delay_risk_score,at_risk_programs,blocker_dependency_signals,model_roc_auc,model_average_precision,model_f1
-Pratheepa Gobady,GitHub REST API Public Issues And Pull Requests,5,5,2000,1115,87,4.5,4,899,0.9527,0.4609,0.5
+Project Demo,GitHub REST API Public Issues And Pull Requests,5,5,2000,1115,87,4.5,4,899,0.9527,0.4609,0.5

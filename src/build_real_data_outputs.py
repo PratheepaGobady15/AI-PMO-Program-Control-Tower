@@ -273,11 +273,11 @@ def train_risk_model(frame: pd.DataFrame) -> ModelArtifacts:
 
 def make_item_action(row: pd.Series) -> str:
     if row["risk_level"] == "High" and row["has_blocker_signal"]:
-        return "Escalate Blocker, Confirm Owner, And Add Executive Visibility This Week."
+        return "Escalate blocker risk, assign a decision lane, and brief leadership this week."
     if row["risk_level"] == "High" and row["item_type"] == "Pull Request":
         return "Fast-Track Review Path, Resolve Review Bottlenecks, And Confirm Merge Readiness."
     if row["risk_level"] == "High":
-        return "Move To PMO Watchlist, Validate Scope, Owner, And Next Decision Date."
+        return "Move to the PMO watchlist, validate scope, and set the next decision date."
     if row["risk_level"] == "Medium":
         return "Monitor Aging, Confirm Milestone Fit, And Refresh Status Evidence."
     return "Keep In Normal Delivery Rhythm."
@@ -433,7 +433,7 @@ def build_status_briefs(program_health: pd.DataFrame, action_queue: pd.DataFrame
             f"{row['stale_or_delayed_rate']:.1%} Delayed Or Stale."
         )
         if row["program_status"] == "Red":
-            focus = "Run A PMO Recovery Review, Confirm Owners, And Protect Near-Term Milestones."
+            focus = "Run a PMO recovery review, assign accountable leads, and protect near-term milestones."
         elif row["program_status"] == "Amber":
             focus = "Tighten Status Evidence, Clear Aging Items, And Watch Dependency Signals."
         else:
@@ -455,7 +455,7 @@ def build_executive_kpis(scored: pd.DataFrame, program_health: pd.DataFrame, met
     return pd.DataFrame(
         [
             {
-                "project_owner": "Pratheepa Gobady",
+                "project_owner": "Project Demo",
                 "data_source": "GitHub REST API Public Issues And Pull Requests",
                 "programs_analyzed": int(program_health["program"].nunique()),
                 "repositories_analyzed": int(scored["source_repo"].nunique()),
@@ -496,7 +496,7 @@ def build_web_payload(
     recent_flow = flow_timeline[flow_timeline["month"].isin(recent_months)].copy()
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "generatedFor": "Pratheepa Gobady",
+        "generatedFor": "Project Demo",
         "title": "AI PMO & Program Control Tower",
         "kpis": frame_to_records(executive_kpis)[0],
         "programHealth": frame_to_records(program_health),

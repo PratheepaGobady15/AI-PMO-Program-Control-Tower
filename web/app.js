@@ -26,6 +26,13 @@ const titleize = (value) =>
   String(value || "")
     .replaceAll("_", " ")
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
+const cleanActionText = (value) =>
+  String(value ?? "")
+    .replace(/Escalate Blocker, Confirm (Owner|Lead), And Add Executive Visibility This Week\./gi, "Escalate blocker risk, assign a decision lane, and brief leadership this week.")
+    .replace(/Move To PMO Watchlist, Validate Scope, (Owner|Lead), And Next Decision Date\./gi, "Move to the PMO watchlist, validate scope, and set the next decision date.")
+    .replace(/Confirm (Owners|Owner|Leads|Lead)/gi, "Assign accountable leads")
+    .replace(/\bOwners\b/g, "Leads")
+    .replace(/\bOwner\b/g, "Lead");
 const shorten = (value, length = 18) => {
   const text = String(value ?? "");
   return text.length > length ? `${text.slice(0, length - 1)}...` : text;
@@ -125,7 +132,7 @@ function renderActionQueue() {
             <b class="risk-badge ${level}">${escapeHtml(row.risk_level)} / ${Number(row.delay_risk_score).toFixed(1)}</b>
           </div>
           <p>${escapeHtml(row.decision_lane)} - ${escapeHtml(row.program)}</p>
-          <p>${escapeHtml(row.recommended_action)}</p>
+          <p>${escapeHtml(cleanActionText(row.recommended_action))}</p>
           <p>${escapeHtml(row.source_repo)} #${escapeHtml(row.item_number)} / ${formatNumber(row.age_days)} Days Old</p>
         </article>
       `;
@@ -176,20 +183,78 @@ function drawRiskCanvas() {
   context.fillText("High Health", width - 98, height - 14);
   context.fillText("High Risk", 8, margin.top + 4);
 
-  rows.forEach((program) => {
+  const points = rows.map((program) => {
     const health = Number(program.program_health_score || 0);
     const risk = Number(program.avg_delay_risk_score || 0);
-    const x = margin.left + (health / 100) * chartWidth;
-    const y = margin.top + chartHeight - (risk / 100) * chartHeight;
-    const statusColor = colors[program.program_status] || colors.blue;
+    return {
+      program,
+      x: margin.left + (health / 100) * chartWidth,
+      y: margin.top + chartHeight - (risk / 100) * chartHeight,
+      statusColor: colors[program.program_status] || colors.blue,
+      label: program.source_repo.split("/")[1],
+    };
+  });
+
+  points.forEach((point) => {
+    const { x, y, statusColor } = point;
     context.fillStyle = statusColor;
     context.beginPath();
     context.arc(x, y, 9, 0, Math.PI * 2);
     context.fill();
-    context.fillStyle = colors.ink;
-    context.font = "11px Inter, sans-serif";
-    context.fillText(program.source_repo.split("/")[1], Math.min(x + 12, width - 118), y + 4);
+    context.strokeStyle = "rgba(8,11,16,0.82)";
+    context.lineWidth = 2;
+    context.stroke();
   });
+
+  const placedLabels = [];
+  const overlaps = (box) =>
+    placedLabels.some(
+      (placed) =>
+        box.x < placed.x + placed.w &&
+        box.x + box.w > placed.x &&
+        box.y < placed.y + placed.h &&
+        box.y + box.h > placed.y,
+    );
+
+  context.font = "800 11px Inter, sans-serif";
+  points
+    .sort((a, b) => a.y - b.y)
+    .forEach((point) => {
+      const text = point.label;
+      const textWidth = context.measureText(text).width;
+      const boxWidth = textWidth + 14;
+      const boxHeight = 20;
+      const rightSide = point.x + 14 + boxWidth < width - 12;
+      const labelX = Math.max(8, Math.min(width - boxWidth - 8, rightSide ? point.x + 14 : point.x - boxWidth - 14));
+      const candidates = [0, -18, 18, -36, 36, -54, 54, -72, 72];
+      let labelY = point.y - boxHeight / 2;
+      let chosenBox = null;
+      for (const offset of candidates) {
+        const nextY = Math.max(margin.top + 4, Math.min(height - margin.bottom - boxHeight - 4, point.y - boxHeight / 2 + offset));
+        const box = { x: labelX, y: nextY, w: boxWidth, h: boxHeight };
+        if (!overlaps(box)) {
+          labelY = nextY;
+          chosenBox = box;
+          break;
+        }
+      }
+      if (!chosenBox) {
+        chosenBox = { x: labelX, y: labelY, w: boxWidth, h: boxHeight };
+      }
+      placedLabels.push(chosenBox);
+      const connectorX = rightSide ? labelX : labelX + boxWidth;
+      context.strokeStyle = "rgba(245,248,251,0.28)";
+      context.lineWidth = 1;
+      context.beginPath();
+      context.moveTo(point.x, point.y);
+      context.lineTo(connectorX, labelY + boxHeight / 2);
+      context.stroke();
+      context.lineWidth = 4;
+      context.strokeStyle = "rgba(245,248,251,0.88)";
+      context.strokeText(text, labelX + 7, labelY + 14);
+      context.fillStyle = colors.ink;
+      context.fillText(text, labelX + 7, labelY + 14);
+    });
 }
 
 function drawFlowCanvas() {
@@ -252,7 +317,7 @@ function drawPortfolioCanvas() {
   const canvas = document.querySelector("#portfolioCanvas");
   const { context, width, height } = setupCanvas(canvas);
   const programs = data.programHealth;
-  const core = { x: width * 0.72, y: height * 0.5 };
+  const core = { x: width * 0.76, y: height * 0.5 };
   context.clearRect(0, 0, width, height);
 
   context.strokeStyle = "rgba(245,248,251,0.08)";
@@ -281,12 +346,12 @@ function drawPortfolioCanvas() {
   context.fillText("PMO DECISION CORE", core.x - 62, core.y + 4);
 
   programs.forEach((program, index) => {
-    const y = height * (0.18 + index * 0.16);
-    const x = width * (0.34 + (index % 2) * 0.08);
+    const y = height * (0.18 + index * 0.145);
+    const x = width * (0.5 + (index % 2) * 0.055);
     const statusColor = colors[program.program_status] || colors.blue;
     const risk = Number(program.avg_delay_risk_score || 0);
     const blockers = Number(program.blocker_signals || 0);
-    const radius = 12 + Math.min(22, Number(program.total_work_items || 0) / 28);
+    const radius = 10 + Math.min(18, Number(program.total_work_items || 0) / 34);
 
     context.strokeStyle = statusColor;
     context.globalAlpha = 0.24 + Math.min(0.42, blockers / 900);
@@ -306,12 +371,18 @@ function drawPortfolioCanvas() {
     context.stroke();
     context.fillStyle = statusColor;
     context.fillRect(x - radius, y + radius + 7, radius * 2 * Math.min(1, Number(program.program_health_score || 0) / 100), 4);
-    context.fillStyle = colors.ink;
     context.font = "900 11px Inter, sans-serif";
-    context.fillText(shorten(program.source_repo.split("/")[1], 18), x + radius + 10, y + 4);
+    const label = shorten(program.source_repo.split("/")[1], 14);
+    const labelWidth = context.measureText(label).width + 14;
+    const labelX = Math.min(x + radius + 9, width - labelWidth - 10);
+    context.lineWidth = 4;
+    context.strokeStyle = "rgba(255,255,255,0.88)";
+    context.strokeText(label, labelX + 7, y + 2);
+    context.fillStyle = colors.ink;
+    context.fillText(label, labelX + 7, y + 2);
     context.fillStyle = colors.muted;
     context.font = "800 10px Inter, sans-serif";
-    context.fillText(`${program.program_status} / ${program.high_risk_items} High Risk`, x + radius + 10, y + 19);
+    context.fillText(`${program.program_status} / ${program.high_risk_items} High Risk`, labelX + 7, y + 16);
   });
 }
 
@@ -336,8 +407,8 @@ function renderBriefs() {
       (row) => `
         <article class="brief-row">
           <strong>${escapeHtml(row.program)} / ${escapeHtml(row.program_status)}</strong>
-          <p>${escapeHtml(row.status_brief)}</p>
-          <p>${escapeHtml(row.recommended_focus)}</p>
+          <p>${escapeHtml(cleanActionText(row.status_brief))}</p>
+          <p>${escapeHtml(cleanActionText(row.recommended_focus))}</p>
         </article>
       `,
     )

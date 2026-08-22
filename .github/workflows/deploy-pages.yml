@@ -1,4 +1,4 @@
-name: Deploy Dashboard Website
+name: Deploy Project Website
 
 on:
   push:

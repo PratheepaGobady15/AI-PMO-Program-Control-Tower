@@ -1,12 +1,10 @@
 # AI PMO & Program Control Tower
 
-**Live Dashboard:** [Open AI PMO & Program Control Tower](https://pratheepagobady15.github.io/AI-PMO-Program-Control-Tower/)
+**Live Website:** [Open AI PMO & Program Control Tower](https://pratheepagobady15.github.io/AI-PMO-Program-Control-Tower/)
 
-An Advanced Real-Data Program Management Control Tower.
-It Uses Public GitHub Project Signals To Predict Work-Item Risk, Summarize Program Health, Surface Dependency Blockers, And Create Executive-Ready Status Evidence.
-The Project Combines A Working ML Pipeline, Power BI-Ready Outputs, And A Visually Distinct Browser Dashboard For Technical Review.
-
-This Project Turns Public GitHub Issues And Pull Requests Into A Portfolio-Level PMO Dashboard With Predictive Delay Risk, Program Health Scoring, Dependency Signals, Executive Status Briefs, And Power BI-Ready Outputs.
+This Project Is A Multi-Stream Program Governance System For Technical Leaders.
+It Uses Public GitHub Project Signals To Predict Work-Item Risk, Summarize Program Health, Surface Dependency Blockers, And Create Executive-Ready Status Evidence Across Several Large Open-Source Programs.
+The Core Story Is Portfolio Governance: Converting Engineering Activity Into Prioritized Executive Attention, Not Just Displaying More Charts.
 
 ## What Makes It Different
 
@@ -17,7 +15,7 @@ Most PMO Dashboards Show Static Status. This Project Acts Like A Predictive Prog
 - Trains A Working Delay-Risk Classifier With Holdout Validation.
 - Builds Program Health Scores From Risk, Open Work, Staleness, Blockers, And Throughput Signals.
 - Creates Evidence-Backed Executive Status Briefs From Model Outputs And Program Metrics.
-- Produces A Futuristic Browser Dashboard And Clean CSV Files For Power BI.
+- Produces A Browser-Based Program Review Surface And Clean CSV Files For BI Extension.
 
 ## Default Program Streams
 
@@ -75,7 +73,7 @@ The Validation Script Checks Required Outputs, Real GitHub Source Signals, Model
 
 ## Open The Dashboard
 
-Open The Live Dashboard:
+Open The Live Website:
 
 ```text
 https://pratheepagobady15.github.io/AI-PMO-Program-Control-Tower/

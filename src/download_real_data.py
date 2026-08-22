@@ -50,7 +50,7 @@ def github_headers() -> dict[str, str]:
     headers = {
         "Accept": "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28",
-        "User-Agent": "Pratheepa-Gobady-AI-PMO-Control-Tower",
+        "User-Agent": "AI-PMO-Control-Tower",
     }
     token = os.getenv("GITHUB_TOKEN")
     if token:

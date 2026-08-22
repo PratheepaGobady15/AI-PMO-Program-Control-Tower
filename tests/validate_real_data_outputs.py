@@ -51,7 +51,7 @@ def main() -> None:
     executive = read_csv("executive_kpis.csv")
     require(len(executive) == 1, "Executive KPIs Should Have One Row")
     kpis = executive.iloc[0]
-    require(kpis["project_owner"] == "Pratheepa Gobady", "Project Owner Must Be Pratheepa Gobady")
+    require(kpis["project_owner"] == "Project Demo", "Project Owner Must Be Project Demo")
     require("GitHub" in kpis["data_source"], "Data Source Must Reference Real GitHub Data")
     require(int(kpis["programs_analyzed"]) >= 5, "At Least Five Programs Should Be Analyzed")
     require(int(kpis["work_items_scored"]) >= 1000, "A Meaningful Real Work Item Set Is Required")
@@ -92,7 +92,7 @@ def main() -> None:
     require(dashboard_json.exists(), "Dashboard JSON Missing")
     require(dashboard_js.exists(), "Dashboard JS Missing")
     payload = json.loads(dashboard_json.read_text(encoding="utf-8"))
-    require(payload["generatedFor"] == "Pratheepa Gobady", "Dashboard Payload Owner Is Incorrect")
+    require(payload["generatedFor"] == "Project Demo", "Dashboard Payload Owner Is Incorrect")
     require(len(payload["programHealth"]) >= 5, "Dashboard Program Health Payload Is Missing")
     require(len(payload["actionQueue"]) >= 20, "Dashboard Action Queue Payload Is Too Small")
     require(len(payload["statusBriefs"]) >= 5, "Dashboard Status Briefs Missing")

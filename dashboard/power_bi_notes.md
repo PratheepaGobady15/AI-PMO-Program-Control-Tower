@@ -74,3 +74,6 @@ CALCULATE(
 Throughput Gap =
 SUM(portfolio_flow_timeline[created_items]) - SUM(portfolio_flow_timeline[closed_items])
 ```
+## Website Interface Note
+
+The browser website is now the primary interactive interface; these Power BI notes remain as optional supporting BI documentation for the PMO control outputs.
